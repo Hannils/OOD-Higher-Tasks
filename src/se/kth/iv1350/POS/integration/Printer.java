@@ -15,7 +15,8 @@ public class Printer {
    * @param sale This is the parameter which contains information about the sale.
    */
   public void printReceipt(Receipt receipt, Sale sale) {
-    String storeinformation = receipt.getStoreInformation();
+    System.out.println("Printing receipt...");
+    /*String storeinformation = receipt.getStoreInformation();
     System.out.println("*****************************************");
     System.out.println(storeinformation);
     System.out.println(sale.getSaleTime() + "               " + sale.getDate()+"\n");
@@ -28,5 +29,6 @@ public class Printer {
     System.out.println("TOTALT                  " + sale.getRunningTotal());
     System.out.println("TOTALT EFTER AVDRAG     " + Math.round(priceWithDiscount * 100.0) / 100.0);
     System.out.println("*****************************************");
+     */
   }
 }

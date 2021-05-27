@@ -35,4 +35,12 @@ class MainTest {
 	assertTrue(printout.contains("started"), "UI did not start correctly.");
   }
 
+  @Test
+    public void testIfMainRunsFakeExecution() {
+      String[] args = null;
+      Main.main(args);
+      String printout = printoutBuffer.toString();
+      assertTrue(printout.contains("Running fake execution."), "Main does not run fake execution.");
+  }
+
 }

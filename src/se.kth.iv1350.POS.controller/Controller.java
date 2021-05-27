@@ -63,7 +63,6 @@ public class Controller {
     try {
       ItemDTO itemDTO = eis.findItem(identifier);
       SaleInfoDTO saleInformation = sale.addItem(itemDTO);
-      System.out.println("Item " + identifier + " has been added");
       return saleInformation;
     } catch (ItemNotFoundException | ServerDownException exception) {
       System.out.println("For developers: " + exception.getMessage());

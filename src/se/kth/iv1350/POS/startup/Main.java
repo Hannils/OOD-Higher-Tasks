@@ -26,7 +26,7 @@ public class Main {
 	//The controller class and view class being created.
 	Controller contr = new Controller(eis, eas, printer, dc);
 	View view = new View(contr);
-
+	System.out.println("Running fake execution.");
 	view.runFakeExecution();
 
 

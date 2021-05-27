@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import src.se.kth.iv1350.POS.DTO.ItemDTO;
 import src.se.kth.iv1350.POS.controller.Controller;
 import src.se.kth.iv1350.POS.model.Item;
+import src.se.kth.iv1350.POS.model.Sale;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EISHandlerTest {
     private EISHandler instanceToTest;
+    private Sale sale;
     private ItemDTO firstTestItemDTO;
     private ItemDTO secondTestItemDTO;
     private ItemDTO thirdTestItemDTO;
@@ -30,6 +32,7 @@ class EISHandlerTest {
         originalSysOut = System.out;
         System.setOut(inMemSysOut);
         instanceToTest = new EISHandler();
+        sale = new Sale();
         firstIdentifier = "first";
         secondIdentifier = "second";
         thirdIdentifier = "third";
@@ -78,5 +81,12 @@ class EISHandlerTest {
             fail("Wrong exception was thrown: " + exce.getMessage());
         }
 
+    }
+
+    @Test
+    public void testIfUpdateInventoryWorksCorrectly() {
+        instanceToTest.updateInventory(sale);
+        String printOut = printoutBuffer.toString();
+        assertTrue(printOut.contains("Inventory has been updated!"), "updateInventory prints correctly.");
     }
 }
