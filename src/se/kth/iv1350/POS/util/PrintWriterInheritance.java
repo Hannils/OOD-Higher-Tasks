@@ -12,7 +12,8 @@ import java.time.LocalTime;
 public class PrintWriterInheritance extends PrintWriter {
     /**
      * Creates a new instance of the PrintWriterInheritance class
-     * @throws IOException if the named file exists but is a directory rather than a regular file, does not exist but cannot be created, or cannot be opened for any other reason
+     * @throws IOException if the named file exists but is a directory rather than a regular file,
+     * does not exist but cannot be created, or cannot be opened for any other reason
      */
     public PrintWriterInheritance() throws IOException {
         super(new FileWriter("total-revenue-inheritance.txt"), true);
@@ -22,7 +23,8 @@ public class PrintWriterInheritance extends PrintWriter {
     public void println(String message) {
         LocalTime timeOfWrite = LocalTime.now();
         LocalDate dateOfWrite = LocalDate.now();
-        super.println("Print from " + dateOfWrite + " at " + timeOfWrite.getHour() + ":" + timeOfWrite.getMinute() + " \n" + message);
+        super.println("Print from " + dateOfWrite + " at " + timeOfWrite.getHour() + ":" + timeOfWrite.getMinute()
+                + " \n" + message);
     }
 
 }

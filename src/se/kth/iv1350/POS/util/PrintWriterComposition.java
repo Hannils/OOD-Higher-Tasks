@@ -12,7 +12,7 @@ public class PrintWriterComposition {
     private PrintWriter writer;
 
     public PrintWriterComposition() throws IOException {
-        writer = new PrintWriter(new FileWriter("total-revenue-compotion.txt"), true);
+        writer = new PrintWriter(new FileWriter("total-revenue-composition.txt"), true);
     }
 
     public void println(String message) {
